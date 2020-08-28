@@ -7,8 +7,7 @@ This is App is for a Software Company. The app used ReactJS and Material-UI.
 Download the example [or clone the repo](https://github.com/mui-org/material-ui):
 
 ```sh
-curl https://github.com/tanvirakibul/arc-development-app.git | tar -xz --strip=2  material-ui-master/examples/nextjs
-cd nextjs
+git clone https://github.com/tanvirakibul/arc-development-app.git 
 ```
 
 Install it and run:
