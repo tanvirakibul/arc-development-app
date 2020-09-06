@@ -6,6 +6,8 @@ import Grid from '@material-ui/core/Grid';
 import IconButton from '@material-ui/core/IconButton';
 import Typography from '@material-ui/core/Typography';
 import useMediaQuery from '@material-ui/core/useMediaQuery';
+import Hidden from '@material-ui/core/Hidden';
+import CallToAction from './ui/CallToAction';
 
 
 import backArrow from '../assets/backArrow.svg';
@@ -27,11 +29,13 @@ const useStyles = makeStyles(theme => ({
     arrowContainer: {
         marginTop: "0.5em"
     },
-    mainContainer: {
+    rowContainer: {
         paddingLeft: "5em",
         paddingRight: "5em",
-        paddingTop: "2em",
-        paddingBottom: "10em"
+        [theme.breakpoints.down("sm")] : {
+            paddingLeft: '1.5em',
+            paddingRight: "1.5em"
+        }
     },
     itemContainer: {
         maxWidth: "40em"
@@ -42,6 +46,9 @@ const useStyles = makeStyles(theme => ({
 
 export default function CustomSoftware(props) {
     const classes = useStyles();
+    const theme = useTheme();
+    const matchesMD = useMediaQuery(theme.breakpoints.down("md"));
+    const matchesSM = useMediaQuery(theme.breakpoints.down("sm"));
 
     const documentsOptions = {
         loop: true,
@@ -81,9 +88,12 @@ export default function CustomSoftware(props) {
 
 
     return (
-        <Grid container direction="column" className={classes.mainContainer}>
-            <Grid item container direction="row">
+        <Grid container direction="column">
+            <Grid item container 
+            direction="row" justify={matchesMD ? "center" : undefined}
+            className={classes.rowContainer}>
             {/* Back arrow item */}
+            <Hidden mdDown>
                 <Grid item className={classes.arrowContainer}
                 style={{marginRight: "1em", marginLeft: "-3.5em"}}>
                     <IconButton style={{backgroundColor: "transparent"}}
@@ -92,30 +102,37 @@ export default function CustomSoftware(props) {
                         <img src={backArrow} alt="Back to Service Page" />
                     </IconButton>
                 </Grid>
+            </Hidden>
             {/* Text items */}
             <Grid item container direction="column" className={classes.heading}>
                 <Grid item>
-                    <Typography variant="h2">Custom Software Development</Typography>
+                    <Typography variant="h2" align={matchesMD ? "center" : undefined}
+                    >Custom Software Development</Typography>
                 </Grid>
                 <Grid item>
-                    <Typography variant="body1" paragraph>
+                    <Typography variant="body1" paragraph
+                    align={matchesMD ? "center" : undefined}>
                     Whether we’re replacing old software or inventing new solutions, Arc Development is here to help your business tackle technology.
                     </Typography>
-                    <Typography variant="body1" paragraph>
+                    <Typography variant="body1" paragraph
+                    align={matchesMD ? "center" : undefined}>
                     Using regular commercial software leaves you with a lot of stuff you don’t need, without some of the stuff you do need, and ultimately controls the way you work.
 Without using any software at all you risk falling behind competitors and missing out on huge savings from increased efficiency.
 
                     </Typography>
-                    <Typography variant="body1" paragraph>
+                    <Typography variant="body1" paragraph
+                    align={matchesMD ? "center" : undefined}>
                     Our custom solutions are designed from the ground up with your needs, wants, and goals at the core. This collaborative process produces finely tuned software that is much more effective at improving your workflow and reducing costs than generalized options.
 
                     </Typography>
-                    <Typography variant="body1" paragraph>
+                    <Typography variant="body1" paragraph
+                    align={matchesMD ? "center" : undefined}>
                     We create exactly what you what, exactly how you want it.
                     </Typography>
                 </Grid>
             </Grid>
             {/* Grid item from second arrow */}
+            <Hidden mdDown>
             <Grid item className={classes.arrowContainer}>
                 <IconButton style={{backgroundColor: "transparent"}}
                 component={Link} to="/mobileapps"
@@ -124,12 +141,14 @@ Without using any software at all you risk falling behind competitors and missin
                     <img src={forwardArrow} alt=" Forward to i0S / Abdroid App Development" />
                 </IconButton>
             </Grid>
+            </Hidden>
             </Grid>
             {/* Mobile app text ends */}
 
     {/* Icons */}
     <Grid item container direction="row" justify="center"
-    style={{marginTop: "4em", marginBottom: "4em"}}>
+    style={{marginTop: "4em", marginBottom: "4em"}}
+    className={classes.rowContainer}>
         <Grid item container direction="column" alignItems="center" md style={{maxWidth: "40em"}}>
             <Grid item>
                 <Typography variant="h4">Save Energy</Typography>
@@ -139,7 +158,10 @@ Without using any software at all you risk falling behind competitors and missin
             </Grid>
         </Grid>
         {/* Icon 2 */}
-        <Grid item container direction="column" alignItems="center" md style={{maxWidth: "40em"}}>
+        <Grid item container direction="column"
+         alignItems="center" md 
+         style={{maxWidth: "40em", marginTop: matchesSM ? "5em" : 0,
+                marginBottom: matchesSM ? "5em" : 0}}>
             <Grid item>
                 <Typography variant="h4">Save Time</Typography>
             </Grid>
@@ -159,22 +181,33 @@ Without using any software at all you risk falling behind competitors and missin
     </Grid>
     {/* Icon Ends */}
 
-        {/* Mobile animation section */}
+        {/* Digital Documnents and scale animation section */}
 
-        <Grid item container direction="row" justify="space-around">
-            <Grid item container className={classes.itemContainer} md>
+        <Grid item container 
+        className={classes.rowContainer}
+        direction={matchesMD ? "column" : "row"}
+        alignItems={matchesMD ? "center" : undefined}
+         justify="space-around">
+            <Grid item container 
+            className={classes.itemContainer}
+            direction={matchesSM ? "column" : "row"}
+            style={{marginBottom: matchesMD ? "5em" : 0}} md>
                 <Grid item container direction="column" md>
                     <Grid item>
-                        <Typography variant="h4">Digital Documents & Data</Typography>
+                        <Typography variant="h4" align={matchesSM ? "center" : undefined}
+                        >Digital Documents & Data</Typography>
                     </Grid>
                     <Grid item>
-                        <Typography variant="body1" paragraph>
+                        <Typography variant="body1" paragraph
+                        align={matchesSM ? "center" : undefined}>
                         Reduce Errors. Reduce Waste. Reduce Costs.
                         </Typography>
-                        <Typography variant="body1" paragraph>
+                        <Typography variant="body1" paragraph
+                        align={matchesSM ? "center" : undefined}>
                         Billions are spent annually on the purchasing, printing, and distribution of paper. On top of the massive environmental impact this has, it causes harm to your bottom line as well.
                         </Typography>
-                        <Typography variant="body1" paragraph>
+                        <Typography variant="body1" paragraph
+                        align={matchesSM ? "center" : undefined}>
                         By utilizing digital forms and documents you can remove these obsolete expenses, accelerate your communication, and help the Earth.
                         </Typography>
                     </Grid>
@@ -185,9 +218,11 @@ Without using any software at all you risk falling behind competitors and missin
                     maxWidth: 275, minHeight: 250 }} />
                 </Grid>
             </Grid>
-                {/* Mobile animation section ends */}
-        {/* Digital documents and scale section starts */}
-        <Grid item container className={classes.itemContainer} md>
+                {/* Digital documents section ends */}
+        {/* Scale section starts */}
+        <Grid className={classes.rowContainer}
+        item container className={classes.itemContainer}
+        direction={matchesSM ? "column" : "row"} md>
         {/* Section animation */}
         <Grid item md>
                     <Lottie options={scaleOptions} style={{maxHeight: 260,
@@ -195,29 +230,34 @@ Without using any software at all you risk falling behind competitors and missin
                 </Grid>
                 <Grid item container direction="column" md>
                     <Grid item>
-                        <Typography variant="h4" align="right">Scale</Typography>
+                        <Typography variant="h4" 
+                        align={matchesSM ? "center" : "right"}
+                        >Scale</Typography>
                     </Grid>
                     <Grid item>
-                        <Typography variant="body1" paragraph align="right">
+                        <Typography variant="body1" paragraph 
+                        align={matchesSM ? "center" : "right"}>
                         Whether you’re a large brand, just getting started, or taking off right now, our application architecture ensures pain-free growth and reliability.
                         </Typography>
                     </Grid>
                 </Grid>
                 
             </Grid>
-        {/* Digital documents ans scale section ends */}
+        {/* Scale section ends */}
         </Grid>
 
         {/* First two section ends */}
         
         {/* Root-cause analysis sectionn starts */}
         
-        <Grid item container direction="row" style={{marginTop: "5em",
+        <Grid className={classes.rowContainer}
+        item container direction="row" style={{marginTop: "5em",
                 marginBottom: "5em"}}>
             <Grid item container direction="column" alignItems="center">
                 <Grid item>
                     <img src={roots} alt="tree with roots extending ourt"
-                    height="450em" width="450em" />
+                    height={matchesSM ? "300em" : "450em" }
+                    width={matchesSM ? "300em" : "450em" } />
                 </Grid>
                 <Grid item className={classes.itemContainer}>
                     <Typography variant="h4" align="center" gutterBottom>Root-Cause Analysis</Typography>
@@ -236,20 +276,32 @@ Without using any software at all you risk falling behind competitors and missin
         {/* Automation and UX section */}
         {/* Automation section */}
 
-        <Grid item container direction="row" justify="space-around">
-            <Grid item container className={classes.itemContainer} md>
+        <Grid className={classes.rowContainer}
+        item container 
+        direction={matchesMD ? "column" : "row"}
+        alignItems={matchesMD ? "center" : undefined} 
+        justify="space-around"
+                style={{marginBottom: "5em"}}>
+            <Grid item container className={classes.itemContainer}
+            style={{marginBottom: matchesMD ? "5em": 0}}
+            direction={matchesSM ? "column" : "row"} md>
                 <Grid item container direction="column" md>
                     <Grid item>
-                        <Typography variant="h4">Automation</Typography>
+                        <Typography variant="h4"
+                        align={matchesSM ? "center" : undefined}>
+                        Automation</Typography>
                     </Grid>
                     <Grid item>
-                        <Typography variant="body1" paragraph>
+                        <Typography variant="body1" paragraph
+                        align={matchesSM ? "center" : undefined}>
                         Why waste time when you don’t have to?
                         </Typography>
-                        <Typography variant="body1" paragraph>
+                        <Typography variant="body1" paragraph
+                        align={matchesSM ? "center" : undefined}>
                         We can help you identify processes with time or event based actions which can now easily be automated.
                         </Typography>
-                        <Typography variant="body1" paragraph>
+                        <Typography variant="body1" paragraph
+                        align={matchesSM ? "center" : undefined}>
                         Increasing efficiency increases profits, leaving you more time to focus on your business, not busywork.
                         </Typography>
                     </Grid>
@@ -262,7 +314,9 @@ Without using any software at all you risk falling behind competitors and missin
             </Grid>
                 {/* automation section ends */}
         {/* ux section starts */}
-        <Grid item container className={classes.itemContainer} md>
+        <Grid className={classes.rowContainer}
+        item container className={classes.itemContainer}
+        direction={matchesSM ? "column" : "row"} md>
         {/* Section animation */}
         <Grid item md>
                     <Lottie options={uxOptions} style={{maxHeight: 310,
@@ -270,18 +324,23 @@ Without using any software at all you risk falling behind competitors and missin
                 </Grid>
                 <Grid item container direction="column" md>
                     <Grid item>
-                        <Typography variant="h4" align="right">
+                        <Typography variant="h4" 
+                        align={matchesSM ? "center" : "right"}
+                        >
                         User Experience Design
                         </Typography>
                     </Grid>
                     <Grid item>
-                        <Typography variant="body1" paragraph align="right">
+                        <Typography variant="body1" paragraph 
+                        align={matchesSM ? "center" : "right"}>
                         A good design that isn’t usable isn’t a good design.
                         </Typography>
-                        <Typography variant="body1" paragraph align="right">
+                        <Typography variant="body1" paragraph 
+                        align={matchesSM ? "center" : "right"}>
                         So why are so many pieces of software complicated, confusing, and frustrating?
                         </Typography>
-                        <Typography variant="body1" paragraph align="right">
+                        <Typography variant="body1" paragraph 
+                        align={matchesSM ? "center" : "right"}>
                         By prioritizing users and the real ways they interact with technology we’re able to develop unique, personable experiences that solve problems rather than create new ones.
                         </Typography>
                     </Grid>
@@ -291,8 +350,14 @@ Without using any software at all you risk falling behind competitors and missin
         {/* Aux section ends */}
         </Grid>
         {/* Automation and ux section ends */}
+        
+        {/* Call to action page */}
+        <Grid item>
+            <CallToAction setValue={props.setValue} />
+        </Grid>
 
-            {/* Page ends */}
+            {/*Call to action Page ends */}
+
         </Grid>
     );
 }
