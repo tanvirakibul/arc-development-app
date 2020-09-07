@@ -1,8 +1,8 @@
 # A High Fidelity Web App built with React.JS and Material-UI
 
-This is App is for a Software Company. The app used ReactJS and Material-UI.
+This  App is for a Software Company. The app is built using ReactJS and Material-UI.
 
-## How to use
+## How to use ?
 
 Download the example [or clone the repo](https://github.com/mui-org/material-ui):
 
