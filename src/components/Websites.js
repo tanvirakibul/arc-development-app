@@ -1,5 +1,4 @@
 import React from 'react';
-import Lottie from 'react-lottie';
 import { Link } from 'react-router-dom';
 import {makeStyles, useTheme} from '@material-ui/core/styles';
 import Grid from '@material-ui/core/Grid';
@@ -15,6 +14,7 @@ import analytics from '../assets/analytics.svg';
 import seo from '../assets/seo.svg';
 import outreach from '../assets/outreach.svg';
 import ecommerce from '../assets/ecommerce.svg';
+import { CallMadeRounded } from '@material-ui/icons';
 
 const useStyles = makeStyles(theme => ({
     heading: {
@@ -116,9 +116,11 @@ export default function Websites(props) {
                     </Grid>
                 </Grid>
             </Grid>
-            <Grid item>
-                <Typography variant="body1"
-                className={classes.paragraphContainer}>
+            <Grid item className={classes.paragraphContainer}>
+                <Typography
+                paragraph
+                variant="body1"
+                >
                     Knowledge is power, and data is 21st Century gold.
                     Analyzing this data can reveal hidden and trends in your
                     business, empowering you to make decisions with measurable effects.
@@ -126,6 +128,117 @@ export default function Websites(props) {
             </Grid>
             </Grid>
             {/* Analytics ends */}
+
+            {/* Ecomerce section starts */}
+            <Grid item container 
+            alignItems="center"
+            justify = "flex-end"
+            direction="row" 
+            className={classes.rowContainer} >
+            
+            <Grid item>
+                <Grid container direction ="column">
+                    <Grid item >
+                        <Typography variant="h4" gutterBottom>
+                            E-Commerce
+                            </Typography>
+                    </Grid>
+                    <Grid item>
+                        <img src={ecommerce}
+                        alt="World outline made of dollar signs" />
+                    </Grid>
+                </Grid>
+            </Grid>
+            <Grid item
+            style={{marginLeft: "1em"}}
+             className={classes.paragraphContainer}>
+                <Typography variant="body1"
+                paragraph
+                >
+                It’s no secret that people like to shop online.
+                </Typography>
+                <Typography variant="body1"
+                paragraph
+                >
+                In 2017 over $2.3 trillion was spent in e-commerce, and it’s time for your slice of that pie.                </Typography>
+            </Grid>
+            </Grid>
+            {/* Ecommerce section ends */}
+            {/* Outreach starts */}
+            <Grid item container 
+            alignItems="center"
+            direction="row" 
+            className={classes.rowContainer} >
+            
+            <Grid item>
+                <Grid container direction ="column">
+                    <Grid item>
+                        <Typography variant="h4" gutterBottom>
+                            Outreach
+                            </Typography>
+                    </Grid>
+                    <Grid item>
+                        <img src={outreach}
+                        alt="megapjone" />
+                    </Grid>
+                </Grid>
+            </Grid>
+            <Grid item style={{marginLeft: "1em"}}
+            className={classes.paragraphContainer}>
+                <Typography
+                paragraph
+                variant="body1"
+                >
+                   Draw people in with a dazzling website. Showing off your products online is a great way to help customers decide what’s right for them before visiting in person.
+                </Typography>
+            </Grid>
+            </Grid>
+            {/* Outreach ends */}
+            {/* SEO section starts */}
+            <Grid item container 
+            alignItems="center"
+            justify = "flex-end"
+            direction="row" 
+            className={classes.rowContainer} >
+            
+            <Grid item>
+                <Grid container direction ="column">
+                    <Grid item >
+                        <Typography variant="h4" gutterBottom>
+                            Search Engine <br /> Optimization
+                            </Typography>
+                    </Grid>
+                    <Grid item>
+                        <img src={seo}
+                        alt="website standing on winner's podium" />
+                    </Grid>
+                </Grid>
+            </Grid>
+            <Grid item
+            style={{marginLeft: "1em"}}
+             className={classes.paragraphContainer}>
+                <Typography variant="body1"
+                paragraph
+                >
+                How often have you ever been to the second page of Google results?
+                </Typography>
+                <Typography variant="body1"
+                paragraph
+                >
+                    If you’re like us, probably never.
+                </Typography>
+                <Typography variant="body1"
+                paragraph
+                >
+                    Customers don’t go there either, so we make sure your website is designed to end up on top. 
+                </Typography>
+            </Grid>
+            </Grid>
+            {/* SEO section ends */}
+            <Grid item>
+                <CallToAction
+                 />
+            </Grid>
         </Grid>
     )
 
