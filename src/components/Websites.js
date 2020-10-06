@@ -14,7 +14,6 @@ import analytics from '../assets/analytics.svg';
 import seo from '../assets/seo.svg';
 import outreach from '../assets/outreach.svg';
 import ecommerce from '../assets/ecommerce.svg';
-import { CallMadeRounded } from '@material-ui/icons';
 
 const useStyles = makeStyles(theme => ({
     heading: {
@@ -47,7 +46,6 @@ export default function Websites(props) {
     const theme = useTheme();
     const matchesMD = useMediaQuery(theme.breakpoints.down("md"));
     const matchesSM = useMediaQuery(theme.breakpoints.down("sm"));
-    const matchesXS = useMediaQuery(theme.breakpoints.down("xs"));
 
     return (
         <Grid container direction="column">

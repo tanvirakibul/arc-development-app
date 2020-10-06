@@ -221,7 +221,7 @@ Without using any software at all you risk falling behind competitors and missin
                 {/* Digital documents section ends */}
         {/* Scale section starts */}
         <Grid className={classes.rowContainer}
-        item container className={classes.itemContainer}
+        item container 
         direction={matchesSM ? "column" : "row"} md>
         {/* Section animation */}
         <Grid item md>
@@ -315,7 +315,8 @@ Without using any software at all you risk falling behind competitors and missin
                 {/* automation section ends */}
         {/* ux section starts */}
         <Grid className={classes.rowContainer}
-        item container className={classes.itemContainer}
+        item container 
+        
         direction={matchesSM ? "column" : "row"} md>
         {/* Section animation */}
         <Grid item md>
