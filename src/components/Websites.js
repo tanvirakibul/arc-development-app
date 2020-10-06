@@ -47,6 +47,7 @@ export default function Websites(props) {
     const theme = useTheme();
     const matchesMD = useMediaQuery(theme.breakpoints.down("md"));
     const matchesSM = useMediaQuery(theme.breakpoints.down("sm"));
+    const matchesXS = useMediaQuery(theme.breakpoints.down("xs"));
 
     return (
         <Grid container direction="column">
@@ -101,17 +102,20 @@ export default function Websites(props) {
             {/* Analytics starts */}
             <Grid item container 
             alignItems="center"
-            direction="row" 
-            className={classes.rowContainer} >
+            direction={matchesSM ? "column" : "row"  }
+            className={classes.rowContainer}
+            style={{marginTop: '5em'}} >
             
             <Grid item>
                 <Grid container direction ="column">
                     <Grid item>
-                        <Typography variant="h4" gutterBottom>Analytics</Typography>
+                        <Typography variant="h4" gutterBottom
+                        align={matchesSM ? "center" : undefined}
+                        >Analytics</Typography>
                     </Grid>
                     <Grid item>
                         <img src={analytics} 
-                        style={{marginLeft: "-2.75em"}}
+                        style={{ marginLeft: matchesSM? 0 : "-2.75em"}}
                         alt="graph with magnifying glass revealing 1's and 0's" />
                     </Grid>
                 </Grid>
@@ -120,6 +124,7 @@ export default function Websites(props) {
                 <Typography
                 paragraph
                 variant="body1"
+                align={matchesSM ? "center" : undefined}
                 >
                     Knowledge is power, and data is 21st Century gold.
                     Analyzing this data can reveal hidden and trends in your
@@ -132,14 +137,17 @@ export default function Websites(props) {
             {/* Ecomerce section starts */}
             <Grid item container 
             alignItems="center"
-            justify = "flex-end"
-            direction="row" 
-            className={classes.rowContainer} >
+            justify = {matchesSM ? "center" : "flex-end"}
+            direction={matchesSM ? "column" : "row"  } 
+            className={classes.rowContainer} 
+            style={{marginBottom: "5em", marginTop: "5em"}}>
             
             <Grid item>
                 <Grid container direction ="column">
                     <Grid item >
-                        <Typography variant="h4" gutterBottom>
+                        <Typography variant="h4" 
+                        align={matchesSM ? "center" : undefined}
+                        gutterBottom>
                             E-Commerce
                             </Typography>
                     </Grid>
@@ -150,14 +158,16 @@ export default function Websites(props) {
                 </Grid>
             </Grid>
             <Grid item
-            style={{marginLeft: "1em"}}
+            style={{marginLeft: matchesSM ? 0 : "1em"}}
              className={classes.paragraphContainer}>
                 <Typography variant="body1"
                 paragraph
+                align={matchesSM ? "center" : undefined}
                 >
                 It’s no secret that people like to shop online.
                 </Typography>
                 <Typography variant="body1"
+                align={matchesSM ? "center" : undefined}
                 paragraph
                 >
                 In 2017 over $2.3 trillion was spent in e-commerce, and it’s time for your slice of that pie.                </Typography>
@@ -167,13 +177,15 @@ export default function Websites(props) {
             {/* Outreach starts */}
             <Grid item container 
             alignItems="center"
-            direction="row" 
+            direction={matchesSM ? "column" : "row"  } 
             className={classes.rowContainer} >
             
             <Grid item>
                 <Grid container direction ="column">
                     <Grid item>
-                        <Typography variant="h4" gutterBottom>
+                        <Typography variant="h4"
+                        align={matchesSM ? "center" : undefined}
+                         gutterBottom>
                             Outreach
                             </Typography>
                     </Grid>
@@ -183,10 +195,11 @@ export default function Websites(props) {
                     </Grid>
                 </Grid>
             </Grid>
-            <Grid item style={{marginLeft: "1em"}}
+            <Grid item style={{marginLeft: matchesSM ? 0 : "1em"}}
             className={classes.paragraphContainer}>
                 <Typography
                 paragraph
+                align={matchesSM ? "center" : undefined}
                 variant="body1"
                 >
                    Draw people in with a dazzling website. Showing off your products online is a great way to help customers decide what’s right for them before visiting in person.
@@ -198,13 +211,16 @@ export default function Websites(props) {
             <Grid item container 
             alignItems="center"
             justify = "flex-end"
-            direction="row" 
-            className={classes.rowContainer} >
+            direction={matchesSM ? "column" : "row"  } 
+            className={classes.rowContainer} 
+            style={{marginTop: "5em", marginBottom: "5em"}}>
             
             <Grid item>
                 <Grid container direction ="column">
                     <Grid item >
-                        <Typography variant="h4" gutterBottom>
+                        <Typography variant="h4" 
+                        align={matchesSM ? "center" : undefined}
+                        gutterBottom>
                             Search Engine <br /> Optimization
                             </Typography>
                     </Grid>
@@ -215,20 +231,23 @@ export default function Websites(props) {
                 </Grid>
             </Grid>
             <Grid item
-            style={{marginLeft: "1em"}}
+            style={{marginLeft: matchesSM ? 0 : "1em"}}
              className={classes.paragraphContainer}>
                 <Typography variant="body1"
                 paragraph
+                align={matchesSM ? "center" : undefined}
                 >
                 How often have you ever been to the second page of Google results?
                 </Typography>
                 <Typography variant="body1"
                 paragraph
+                align={matchesSM ? "center" : undefined}
                 >
                     If you’re like us, probably never.
                 </Typography>
                 <Typography variant="body1"
                 paragraph
+                align={matchesSM ? "center" : undefined}
                 >
                     Customers don’t go there either, so we make sure your website is designed to end up on top. 
                 </Typography>
