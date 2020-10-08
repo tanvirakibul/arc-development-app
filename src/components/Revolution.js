@@ -5,7 +5,14 @@ import Typography from '@material-ui/core/Typography';
 import Lottie from 'react-lottie';
 
 import vision from '../assets/vision.svg';
-import consultation from '../assets/consultationIcon.svg'
+import consultation from '../assets/consultationIcon.svg';
+import mockup from '../assets/mockupIcon.svg';
+import review from '../assets/reviewIcon.svg';
+import design from '../assets/designIcon.svg';
+import build from '../assets/buildIcon.svg';
+import launch from '../assets/launchIcon.svg';
+import maintain from '../assets/maintainIcon.svg';
+import iterate from '../assets/iterateIcon.svg';
 import technologyAnimation from '../animations/technologyAnimation/data.json';
 
 const useStyles = makeStyles(theme => ({
@@ -176,7 +183,7 @@ export default function Revolution() {
                         Detailed notes will be taken on your requirements and constraints, while taking care to identify other potential areas for consideration.
                         </Typography>
                         <Typography variant="body1" 
-                        style={{color: "#fff", maxWidth: "20em"}}
+                        style={{color: "#fff", maxWidth: "20em", marginBottom: "2em"}}
                         paragraph>
                         Cutting-edge advancements in machine learning like object detection and natural language processing allow computers to do things previously unimaginable, and our expertise and intuition will help usher you into this new future of possibilities.
                         </Typography>
@@ -190,6 +197,327 @@ export default function Revolution() {
 
 
             {/* Process Section Ends */}
+
+    {/* Mockup Section Starts */}
+    <Grid item container direction="row" 
+            className={classes.rowContainer}
+            style={{backgroundColor: "#FF7373"}}>
+                <Grid item container direction="column" lg>
+                    <Grid item>
+                        <Typography variant="h4" 
+                        style={{color: "#000", marginTop: "2em"}}
+                        gutterBottom >
+                            Mockup
+                        </Typography>
+                    </Grid>
+                    <Grid item>
+                        <Typography variant="body1" 
+                        style={{color: "#fff", maxWidth: "20em"}}
+                        paragraph>
+                        After we settle on the best path forward and decide on a solution to pursue, details like the cost and timeline will be finalized.
+                        </Typography>
+                        <Typography variant="body1" 
+                        style={{color: "#fff", maxWidth: "20em"}}
+                        paragraph>
+                        Then it’s time for us to start on your minimum viable product. That’s just a fancy term for a mockup, which doesn’t include colors, images, or any other polished design elements, but captures the essential layout structure and functionality.
+
+                        </Typography>
+                        <Typography variant="body1" 
+                        style={{color: "#fff", maxWidth: "20em"}}
+                        paragraph>
+                        This helps us understand and refine the solution itself before getting distracted by specifics and looks.
+                        </Typography>
+                    </Grid>
+                </Grid>
+                <Grid item lg
+                style={{alignSelf: "center"}}>
+                    <img src={mockup} alt="pc screen" />
+                </Grid>
+            </Grid>
+    {/* Mockup Section Ends */}
+
+    {/* Review Section Starts */}
+    <Grid item container direction="row" 
+            className={classes.rowContainer}
+            style={{backgroundColor: "#39B54A"}}>
+                <Grid item container direction="column" lg>
+                    <Grid item>
+                        <Typography variant="h4" 
+                        style={{color: "#000", marginTop: "2em"}}
+                        gutterBottom >
+                            Review
+                        </Typography>
+                    </Grid>
+                    <Grid item>
+                        <Typography variant="body1" 
+                        style={{color: "#fff", maxWidth: "20em"}}
+                        paragraph>
+                        A second round of review is essential to our goal of creating exactly what you want, exactly how you want it.
+                        </Typography>
+                        <Typography variant="body1" 
+                        style={{color: "#fff", maxWidth: "20em"}}
+                        paragraph>
+                        This time we’ll be going over the finalized designs in another fully interactive demonstration. Again this gives you an opportunity to tweak things and make sure we get everything right the first time.
+
+                        </Typography>
+                    </Grid>
+                </Grid>
+                <Grid item lg
+                style={{alignSelf: "center"}}>
+                    <img src={review} alt="review" />
+                </Grid>
+            </Grid>
+    {/* Review Section Ends */}
+
+    {/* Design Section Starts */}
+    <Grid item container direction="row" 
+            className={classes.rowContainer}
+            style={{backgroundColor: "#A67C52"}}>
+                <Grid item container direction="column" lg>
+                    <Grid item>
+                        <Typography variant="h4" 
+                        style={{color: "#000", marginTop: "2em"}}
+                        gutterBottom >
+                            Design
+                        </Typography>
+                    </Grid>
+                    <Grid item>
+                        <Typography variant="body1" 
+                        style={{color: "#fff", maxWidth: "20em"}}
+                        paragraph>
+                        Using the mockups and notes taken during the consultation as guides, we will start ironing out what the final product will look like. This also involves using any brand material like fonts, colors, and logos to extend the experience you’re already familiar with.
+                        </Typography>
+                        <Typography variant="body1" 
+                        style={{color: "#fff", maxWidth: "20em"}}
+                        paragraph>
+                        No aspect is superfluous, and care will be taken with every decision.
+                        </Typography>
+                    </Grid>
+                </Grid>
+                <Grid item lg
+                style={{alignSelf: "center"}}>
+                    <img src={design} alt="design" />
+                </Grid>
+            </Grid>
+    {/* Mockup Section Ends */}
+{/* Design section end */}
+
+    {/* Review 2 Section Starts */}
+    <Grid item container direction="row" 
+            className={classes.rowContainer}
+            style={{backgroundColor: "#39B54A"}}>
+                <Grid item container direction="column" lg>
+                    <Grid item>
+                        <Typography variant="h4" 
+                        style={{color: "#000", marginTop: "2em"}}
+                        gutterBottom >
+                            Review
+                        </Typography>
+                    </Grid>
+                    <Grid item>
+                        <Typography variant="body1" 
+                        style={{color: "#fff", maxWidth: "20em"}}
+                        paragraph>
+                        A second round of review is essential to our goal of creating exactly what you want, exactly how you want it.
+
+                        </Typography>
+                        <Typography variant="body1" 
+                        style={{color: "#fff", maxWidth: "20em"}}
+                        paragraph>
+                        This time we’ll be going over the finalized designs in another fully interactive demonstration. Again this gives you an opportunity to tweak things and make sure we get everything right the first time
+
+                        </Typography>
+                    </Grid>
+                </Grid>
+                <Grid item lg
+                style={{alignSelf: "center"}}>
+                    <img src={review} alt="review" />
+                </Grid>
+            </Grid>
+    {/* Review 2 Section Ends */}
+
+    {/* Build Section Starts */}
+    <Grid item container direction="row" 
+            className={classes.rowContainer}
+            style={{backgroundColor: "#FBB03B"}}>
+                <Grid item container direction="column" lg>
+                    <Grid item>
+                        <Typography variant="h4" 
+                        style={{color: "#000", marginTop: "2em"}}
+                        gutterBottom >
+                            Build
+                        </Typography>
+                    </Grid>
+                    <Grid item>
+                        <Typography variant="body1" 
+                        style={{color: "#fff", maxWidth: "20em"}}
+                        paragraph>
+                        Here’s where we get down to business.
+                        </Typography>
+                        <Typography variant="body1" 
+                        style={{color: "#fff", maxWidth: "20em"}}
+                        paragraph>
+                        Engineering begins after your approval on the final designs. We start by scaffolding out the project on a high level, prioritizing some areas over others.
+
+                        </Typography>
+                        <Typography variant="body1" 
+                        style={{color: "#fff", maxWidth: "20em"}}
+                        paragraph>
+                        
+Each area is then developed in order of importance until ready to be connected to the next piece.
+
+                        </Typography>
+                        <Typography variant="body1" 
+                        style={{color: "#fff", maxWidth: "20em"}}
+                        paragraph>
+                        Typically the backend, behind the scenes operations are completed first. Once all the services are in place we can then create the front end, user side of things.
+                        </Typography>
+                        <Typography variant="body1" 
+                        style={{color: "#fff", maxWidth: "20em"}}
+                        paragraph>
+                        Finishing the application doesn’t mean we’re done though, because we use extensive testing to guarantee compatibility with all intended devices.
+                        </Typography>
+                        <Typography variant="body1" 
+                        style={{color: "#fff", maxWidth: "20em"}}
+                        paragraph>
+                        Only after our rigorous examinations will we accept a product as finished, then pushing it through the production pipeline. This produces an optimized, compressed, consumer version of the code and assets ready for deployment.
+                        </Typography>
+                    </Grid>
+                </Grid>
+                <Grid item lg
+                style={{alignSelf: "center"}}>
+                    <img src={build} alt="build" />
+                </Grid>
+            </Grid>
+    {/* Build Section Ends */}
+
+
+    {/* Launch Section Starts */}
+    <Grid item container direction="row" 
+            className={classes.rowContainer}
+            style={{backgroundColor: "#C1272D"}}>
+                <Grid item container direction="column" lg>
+                    <Grid item>
+                        <Typography variant="h4" 
+                        style={{color: "#000", marginTop: "2em"}}
+                        gutterBottom >
+                            Launch
+                        </Typography>
+                    </Grid>
+                    <Grid item>
+                        <Typography variant="body1" 
+                        style={{color: "#fff", maxWidth: "20em"}}
+                        paragraph>
+                        The moment we’ve all been waiting for.
+                        </Typography>
+                        <Typography variant="body1" 
+                        style={{color: "#fff", maxWidth: "20em"}}
+                        paragraph>
+                        When construction comes to a close you’re the first one to know. We’ll give our final demonstration to show off your shiny new software in the wild so you know exactly how it will look to your users.
+                        </Typography>
+                        <Typography variant="body1" 
+                        style={{color: "#fff", maxWidth: "20em"}}
+                        paragraph>
+                        When you say the word, we press the button and launch your project out to the public. We’re there to ensure everything goes to plan so you can start reaping the rewards of your technological investment immediately.
+                        </Typography>
+                    
+                    </Grid>
+                </Grid>
+                <Grid item lg
+                style={{alignSelf: "center"}}>
+                    <img src={launch} alt="launch" />
+                </Grid>
+            </Grid>
+    {/* Launch Section Ends */}
+
+    {/* Maintain Section Starts */}
+    <Grid item container direction="row" 
+            className={classes.rowContainer}
+            style={{backgroundColor: "#8E45CE"}}>
+                <Grid item container direction="column" lg>
+                    <Grid item>
+                        <Typography variant="h4" 
+                        style={{color: "#000", marginTop: "2em"}}
+                        gutterBottom >
+                            Maintain
+                        </Typography>
+                    </Grid>
+                    <Grid item>
+                        <Typography variant="body1" 
+                        style={{color: "#fff", maxWidth: "20em"}}
+                        paragraph>
+                        Our work doesn’t end there.
+                        </Typography>
+                        <Typography variant="body1" 
+                        style={{color: "#fff", maxWidth: "20em"}}
+                        paragraph>
+                        
+                        After a successful launch we keep in close contact to listen to feedback and hear how the project is being received.
+
+                        </Typography>
+                        <Typography variant="body1" 
+                        style={{color: "#fff", maxWidth: "20em"}}
+                        paragraph>
+                        From there on out we make sure your application is kept up to date and taking advantage of the best features and practices available. When new developments arise or new techniques are discovered in future projects, we will implement those advancements in your project as part of our routine maintenance.
+                        </Typography>
+                    
+                    </Grid>
+                </Grid>
+                <Grid item lg
+                style={{alignSelf: "center"}}>
+                    <img src={maintain} alt="maintain" />
+                </Grid>
+            </Grid>
+    {/* Maintain Section Ends */}
+
+  {/* Iterate Section Starts */}
+  <Grid item container direction="row" 
+            className={classes.rowContainer}
+            style={{backgroundColor: "#29ABE2"}}>
+                <Grid item container direction="column" lg>
+                    <Grid item>
+                        <Typography variant="h4" 
+                        style={{color: "#000", marginTop: "2em"}}
+                        gutterBottom >
+                            Iterate
+                        </Typography>
+                    </Grid>
+                    <Grid item>
+                        <Typography variant="body1" 
+                        style={{color: "#fff", maxWidth: "20em"}}
+                        paragraph>
+                        The cycle repeats whenever you come up with a new idea for extending your current project, or come up with a brand new system entirely.
+                        </Typography>
+                        <Typography variant="body1" 
+                        style={{color: "#fff", maxWidth: "20em"}}
+                        paragraph>
+                        
+                        
+                        By planning for future features and changes we can build and evolve your application over time. As new use cases and customer needs develop we can respond with continuous integration of new content.
+
+
+                        </Typography>
+                        <Typography variant="body1" 
+                        style={{color: "#fff", maxWidth: "20em"}}
+                        paragraph>
+                        
+                        Our iterative process will keep you current and competitive, allowing you to quickly implement changes instead of waiting months for a single update.
+                        </Typography>
+                    
+                    </Grid>
+                </Grid>
+                <Grid item lg
+                style={{alignSelf: "center"}}>
+                    <img src={iterate} alt="iterate" />
+                </Grid>
+            </Grid>
+    {/* Iterate Section Ends */}
+
+            
+
+            {/* Process section end */}
+
+            {/* Page grid */}
         </Grid>
     )
 }
