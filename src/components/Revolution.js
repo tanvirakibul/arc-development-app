@@ -4,6 +4,7 @@ import Grid from '@material-ui/core/Grid';
 import Typography from '@material-ui/core/Typography';
 import Lottie from 'react-lottie';
 import useMediaQuery from '@material-ui/core/useMediaQuery';
+import CallToAction from './ui/CallToAction';
 
 import vision from '../assets/vision.svg';
 import consultation from '../assets/consultationIcon.svg';
@@ -554,7 +555,9 @@ Each area is then developed in order of importance until ready to be connected t
             
 
             {/* Process section end */}
-
+            <Grid item>
+                <CallToAction />
+            </Grid>
             {/* Page grid */}
         </Grid>
     )
