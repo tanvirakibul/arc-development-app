@@ -121,7 +121,7 @@ There are many different answers to that question: economic barriers, social bar
                 </Grid>
                 <Grid item>
                 <Grid item container justify="center" lg>
-                    <img src={history} alt="Pencil and book image" style={{maxHeight: matchesMD? "15em" : "22em"}} />
+                    <img src={history} alt="Pencil and book" style={{maxHeight: matchesMD? "15em" : "22em"}} />
                 </Grid>
                 </Grid>
             </Grid>
