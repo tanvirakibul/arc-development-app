@@ -48,9 +48,25 @@ const useStyles = makeStyles(theme => ({
         [theme.breakpoints.down("sm")]: {
             marginBottom: "2em"
         }
-    }
+    },
+     message: {
+         border: `2px solid ${theme.palette.common.blue}`,
+         marginTop: "2em",
+         borderRadius: 5
+     },
+     sendButton: {
+         ...theme.typography.estimate,
+         borderRadius: 50,
+         height: 45,
+         width: 245,
+         fontSize: "1rem",
+         backgroundColor: theme.palette.common.orange,
+         "&:hover": {
+             backgroundColor: theme.palette.secondary.light
+         }
+     }
 
-}));
+})); 
 
 
 export default function Contact(props) {
@@ -108,7 +124,8 @@ export default function Contact(props) {
                         </Typography>
                     </Grid>
                 </Grid>
-                <Grid item container>
+                <Grid item container 
+                style={{maxWidth: "20em"}}>
                     <Grid item>
                         <TextField label="Name" id="name" value={name}
                         onChange={event => setName(event.target.value)}/>
@@ -122,8 +139,10 @@ export default function Contact(props) {
                         onChange={event => setPhone(event.target.value)}/>
                     </Grid>
                 </Grid>
-                <Grid item>
+                <Grid item style={{maxWidth: "20em"}}>
                     <TextField value={message}
+                    className={classes.message}
+                    InputProps={{disableUnderline: true}}
                     multiline
                      id="message" 
                      rows={3}
@@ -131,9 +150,13 @@ export default function Contact(props) {
                     />
                 </Grid>
 
-                <Grid item>
-                    <Button variant="contained">Send Message
-                    <img src={airplane} alt="paper plane" /></Button>
+                <Grid item style={{marginTop: "2em"}}>
+                    <Button variant="contained"
+                    className={classes.sendButton}
+                    >Send Message
+                    <img src={airplane} alt="paper plane" 
+                    style={{marginLeft: "1em"}}
+                    /></Button>
                 </Grid>
             </Grid>
 
