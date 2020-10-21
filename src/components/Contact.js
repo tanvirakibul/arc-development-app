@@ -21,7 +21,8 @@ const useStyles = makeStyles(theme => ({
         backgroundPosition:"center",
         backgroundSize: "cover",
         backgroundRepeat: "no-repeat",
-        height: "50em"
+        height: "60em",
+        paddingBottom: "10em"
     },
     estimateButton : {
         ...theme.typography.estimate,
@@ -86,7 +87,11 @@ export default function Contact(props) {
             {/* Form Section */}
             <Grid item container direction="column"
             justify="center"
-             lg={3}>
+            alignItems="center"
+             lg={4}
+             xl={3}>
+                 <Grid item>
+                     <Grid item container direction="column">
                 <Grid item>
                     <Typography variant="h2"
                     style={{lineHeight: 1}}> 
@@ -97,7 +102,8 @@ export default function Contact(props) {
                         We're waiting.
                     </Typography>
                 </Grid>
-                <Grid item container>
+                <Grid item container
+                style={{marginTop: "2em"}}>
                     <Grid item>
                         <img src={phoneIcon} alt="phone" 
                         style={{marginRight: "0.5em"}} />
@@ -110,7 +116,8 @@ export default function Contact(props) {
                         </Typography>
                     </Grid>
                 </Grid>
-                <Grid item container>
+                <Grid item container
+                style={{marginBottom: "2em"}}>
                     <Grid item>
                         <img src={emailIcon} alt="envelope" 
                         style={{marginRight: "0.5em",
@@ -150,7 +157,9 @@ export default function Contact(props) {
                     />
                 </Grid>
 
-                <Grid item style={{marginTop: "2em"}}>
+                <Grid item container
+                justify="center"
+                 style={{marginTop: "2em"}}>
                     <Button variant="contained"
                     className={classes.sendButton}
                     >Send Message
@@ -158,6 +167,8 @@ export default function Contact(props) {
                     style={{marginLeft: "1em"}}
                     /></Button>
                 </Grid>
+            </Grid>
+            </Grid>
             </Grid>
 
 
@@ -168,9 +179,9 @@ export default function Contact(props) {
 
             <Grid item container  className={classes.background}
             alignItems="center"
-            style={{marginTop: "-1em"}}
-             lg={9}>
-                 <Grid item style={{marginLeft: matchesSM ? 0 : "5em", 
+             lg={8}
+             xl={9}>
+                 <Grid item style={{marginLeft: matchesSM ? 0 : "3em", 
         textAlign: matchesSM ? "center" : "inherit"}}>
             <Grid container>
                 <Grid item>
