@@ -83,10 +83,46 @@ export default function Contact(props) {
     
 
     const [name, setName] = useState('');
+
     const [email, setEmail] = useState('');
+    const [emailHelper, setEmailHelper] = useState("");
+
     const [phone, setPhone] = useState('');
+    const [phoneHelper, setPhoneHelper] = useState("");
+
     const [message, setMessage] = useState('');
 
+
+    const onChange = event => {
+        let valid;
+
+        switch (event.target.id) {
+            case 'email':
+                setEmail(event.target.value)
+                valid = /^\w+([.-]?\w+)*@\w+([.-]?\w+)*(\.\w{2,3})+$/.test(event.target.value)
+
+                if (!valid) {
+                    setEmailHelper("Invalid Email")
+                } else {
+                    setEmailHelper("")
+                }
+
+                break;
+                case 'phone':
+                    setPhone(event.target.value)
+                    valid = /^\(?([0-9]{3})\)?[-. ]?([0-9]{3})[-. ]?([0-9]{4})$/.test(event.target.value)
+
+                    if (!valid){
+                        setPhoneHelper("Invalid phone")
+                    } else {
+                        setPhoneHelper("")
+                    }
+                    break;
+                default:
+                    break;
+
+        }
+    }
 
     return (
         <Grid container direction="row">
@@ -154,16 +190,20 @@ export default function Contact(props) {
                     <Grid item>
                         <TextField 
                         fullWidth
+                        helperText={emailHelper}
                          style={{marginBottom: "0.5em"}}
+                         error={emailHelper.length !==0}
                         label="Email" id="email" value={email}
-                        onChange={event => setEmail(event.target.value)}/>
+                        onChange={onChange}/>
                     </Grid>
                     <Grid item>
                         <TextField 
                         fullWidth
+                        helperText={phoneHelper}
                          style={{marginBottom: "0.5em"}}
                         label="Phone" id="phone" value={phone}
-                        onChange={event => setPhone(event.target.value)}/>
+                        error={phoneHelper.length !==0}
+                        onChange={onChange}/>
                     </Grid>
                 </Grid>
                 <Grid item style={{maxWidth: "20em"}}>
