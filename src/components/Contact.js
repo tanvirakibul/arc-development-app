@@ -158,7 +158,9 @@ export default function Contact(props) {
                         <Typography variant="body1"
                         style={{color: theme.palette.common.blue,
                         fontSize: "1rem"}}>
-                            (555) 555-5555
+                           <a href="tel:5555555555"
+                           style={{textDecoration: "none", color: "inherit"}}
+                           >(555) 555-5555</a>
                         </Typography>
                     </Grid>
                 </Grid>
@@ -173,7 +175,8 @@ export default function Contact(props) {
                         <Typography variant="body1"
                         style={{color: theme.palette.common.blue,
                             fontSize: "1rem"}}>
-                            tanvirakibul@gmail.com
+                           <a href="mailto:tanvirakibul@gmail.com"
+                           style={{textDecoration: "none", color: "inherit"}}>tanvirakibul@gmail.com</a>
                         </Typography>
                     </Grid>
                 </Grid>
