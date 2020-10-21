@@ -13,6 +13,7 @@ import background from '../assets/background.jpg';
 import phoneIcon from '../assets/phone.svg';
 import emailIcon from '../assets/email.svg';
 import airplane from '../assets/send.svg';
+import mobileBackgorund from '../assets/mobileBackground.jpg';
 
 const useStyles = makeStyles(theme => ({
 
@@ -22,7 +23,10 @@ const useStyles = makeStyles(theme => ({
         backgroundSize: "cover",
         backgroundRepeat: "no-repeat",
         height: "60em",
-        paddingBottom: "10em"
+        paddingBottom: "10em",
+        [theme.breakpoints.down("md")] : {
+            backgroundImage: `url(${mobileBackgorund})`
+        }
     },
     estimateButton : {
         ...theme.typography.estimate,
@@ -36,7 +40,7 @@ const useStyles = makeStyles(theme => ({
         "&:hover": {
             backgroundColor: theme.palette.secondary.light
         },
-        [theme.breakpoints.down("sm")] : {
+        [theme.breakpoints.down("md")] : {
             marginLeft: 0,
             marginRight: 0
         }
@@ -46,7 +50,7 @@ const useStyles = makeStyles(theme => ({
         fontSize: "0.7rem",
         height: 35,
         padding: 5,
-        [theme.breakpoints.down("sm")]: {
+        [theme.breakpoints.down("md")]: {
             marginBottom: "2em"
         }
     },
@@ -74,7 +78,9 @@ export default function Contact(props) {
 
     const classes = useStyles();
     const theme = useTheme();
+    const matchesMD = useMediaQuery(theme.breakpoints.down("md"));
     const matchesSM = useMediaQuery(theme.breakpoints.down("sm"));
+    
 
     const [name, setName] = useState('');
     const [email, setEmail] = useState('');
@@ -88,16 +94,20 @@ export default function Contact(props) {
             <Grid item container direction="column"
             justify="center"
             alignItems="center"
+            style={{marginBottom: matchesMD ? "5em" : 0,
+        marginTop: matchesSM ? "1em" : matchesMD ? "5em" : 0}}
              lg={4}
              xl={3}>
                  <Grid item>
                      <Grid item container direction="column">
                 <Grid item>
                     <Typography variant="h2"
+                    align={matchesMD ? "center" : undefined}
                     style={{lineHeight: 1}}> 
                     Contact Us
                     </Typography>
                     <Typography variant="body1"
+                    align={matchesMD ? "center" : undefined}
                     style={{color: theme.palette.common.blue}}>
                         We're waiting.
                     </Typography>
@@ -132,17 +142,27 @@ export default function Contact(props) {
                     </Grid>
                 </Grid>
                 <Grid item container 
+                direction="column"
                 style={{maxWidth: "20em"}}>
                     <Grid item>
-                        <TextField label="Name" id="name" value={name}
+                        <TextField 
+                        fullWidth
+                        style={{marginBottom: "0.5em"}}
+                        label="Name" id="name" value={name}
                         onChange={event => setName(event.target.value)}/>
                     </Grid>
                     <Grid item>
-                        <TextField label="Emaile" id="email" value={email}
+                        <TextField 
+                        fullWidth
+                         style={{marginBottom: "0.5em"}}
+                        label="Email" id="email" value={email}
                         onChange={event => setEmail(event.target.value)}/>
                     </Grid>
                     <Grid item>
-                        <TextField label="Phone" id="phone" value={phone}
+                        <TextField 
+                        fullWidth
+                         style={{marginBottom: "0.5em"}}
+                        label="Phone" id="phone" value={phone}
                         onChange={event => setPhone(event.target.value)}/>
                     </Grid>
                 </Grid>
@@ -177,18 +197,24 @@ export default function Contact(props) {
             {/* Call to Action Section */}
 
 
-            <Grid item container  className={classes.background}
+            <Grid item container
+            direction={matchesMD ? "column" : "row"}
+              className={classes.background}
             alignItems="center"
+            justify={matchesMD ? "center" : undefined}
              lg={8}
              xl={9}>
                  <Grid item style={{marginLeft: matchesSM ? 0 : "3em", 
-        textAlign: matchesSM ? "center" : "inherit"}}>
+        textAlign: matchesMD ? "center" : "inherit"}}>
             <Grid container>
                 <Grid item>
-                    <Typography variant="h2">
+                    <Typography variant="h2"
+                    align={matchesMD ? "center" : undefined}>
                         Simple Software. <br/> Revolutionary Results.
                     </Typography>
-                    <Typography variant="subtitle2" style={{fontSize:"1.5rem"}}>
+                    <Typography 
+                    align={matchesMD ? "center" : undefined}
+                    variant="subtitle2" style={{fontSize:"1.5rem"}}>
                         Take advantage of the 21st Century.
                     </Typography>
                     <Grid container justify={matchesSM ? "center" : undefined} item>
