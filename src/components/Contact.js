@@ -141,7 +141,15 @@ export default function Contact(props) {
     setLoading(true);
     axios
       .get(
-        "https://us-central1-arc-development-app-654e1.cloudfunctions.net/sendMail"
+        "https://us-central1-arc-development-app-654e1.cloudfunctions.net/sendMail",
+        {
+          params: {
+            name: name,
+            email: email,
+            phone: phone,
+            message: message,
+          },
+        }
       )
       .then((res) => {
         setLoading(false);
