@@ -61,7 +61,52 @@ export default function Estimate() {
       </Grid>
 
       {/* Questions */}
-      <Grid item container direction="column"></Grid>
+      <Grid item container direction="column">
+        <Grid item>
+            <Typography variant="h2" align="center" style={{fontWeight: 300}}
+            gutterBottom>
+                Which service are you interested in?
+            </Typography>
+        </Grid>
+        <Grid item container>
+            <Grid item container direction="column">
+                <Grid item style={{maxWidth: "12em"}}>
+                    <Typography variant="h6" align="center">
+                        Custom Software Development
+                    </Typography>
+                </Grid>
+                <Grid item>
+                    <img src={software} alt="three floating screens" />
+                </Grid>
+            </Grid>
+
+            <Grid item container direction="column">
+                <Grid item style={{maxWidth: "12em"}}>
+                    <Typography variant="h6" align="center">
+                        iOS/Android App Development
+                    </Typography>
+                </Grid>
+                <Grid item>
+                    <img src={mobile} alt="phones and tables outlines" />
+                </Grid>
+            </Grid>
+
+            <Grid item container direction="column">
+                <Grid item style={{maxWidth: "12em"}}>
+                    <Typography variant="h6" align="center">
+                        Website Development
+                    </Typography>
+                </Grid>
+                <Grid item>
+                    <img src={website} alt="computer screen" />
+                </Grid>
+            </Grid>
+
+
+        </Grid>
+      </Grid>
+
+      {/* Page Grid ends */}
     </Grid>
   );
 }
