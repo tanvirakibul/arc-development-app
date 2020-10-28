@@ -148,6 +148,7 @@ export default function LandingPage(props){
             preserveAspectRation: 'xMidYMid slice'
         }
     }
+    
     return (
         <Grid className={classes.mainContainer}
          container direction="column">
