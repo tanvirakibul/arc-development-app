@@ -368,6 +368,17 @@ export default function Estimate() {
     }
   };
 
+  const handleSelect = (id) => {
+    const newQuestions = cloneDeep(question);
+    const currentlyActive = newQuestions.filter((question) => question.active);
+    const activeIndex = currentlyActive[0].id - 1;
+
+    const newSelected = newQuestions[activeIndex].options[id - 1];
+    newSelected.selected = !newSelected.selected;
+
+    setQuestions(newQuestions);
+  };
+
   return (
     <Grid container direction="row">
       {/* Estimate title & Animations */}
@@ -404,6 +415,7 @@ export default function Estimate() {
                     fontWeight: 500,
                     fontSize: "2.25em",
                     marginTop: "5em",
+                    lineHeight: 1.25,
                   }}
                   gutterBottom
                 >
@@ -420,8 +432,22 @@ export default function Estimate() {
               </Grid>
               <Grid item container>
                 {question.options.map((options) => (
-                  <Grid item container direction="column" md>
-                    <Grid item style={{ maxWidth: "12em" }}>
+                  <Grid
+                    item
+                    container
+                    direction="column"
+                    md
+                    componet={Button}
+                    onClick={() => handleSelect(options.id)}
+                    style={{
+                      display: "grid",
+                      textTransform: "none",
+                      backgroundColor: options.selected
+                        ? theme.palette.common.orange
+                        : null,
+                    }}
+                  >
+                    <Grid item style={{ maxWidth: "14em" }}>
                       <Typography variant="h6" align="center">
                         {options.title}
                       </Typography>
