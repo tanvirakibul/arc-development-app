@@ -7,8 +7,8 @@ import Typography from "@material-ui/core/Typography";
 import Button from "@material-ui/core/Button";
 import IconButton from "@material-ui/core/IconButton";
 
-import check from "../assets/check.svg";
-import send from "../assets/send.svg";
+// import check from "../assets/check.svg";
+// import send from "../assets/send.svg";
 import software from "../assets/software.svg";
 import mobile from "../assets/mobile.svg";
 import website from "../assets/website.svg";
