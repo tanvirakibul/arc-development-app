@@ -348,6 +348,26 @@ export default function Estimate() {
     setQuestions(newQuestions);
   };
 
+  const navigationPreviousDisabled = () => {
+    const currentlyActive = question.filter((question) => question.active);
+
+    if (currentlyActive[0].id === 1) {
+      return true;
+    } else {
+      return false;
+    }
+  };
+
+  const navigationNextDisabled = () => {
+    const currentlyActive = question.filter((question) => question.active);
+
+    if (currentlyActive[0].id === question[question.length - 1].id) {
+      return true;
+    } else {
+      return false;
+    }
+  };
+
   return (
     <Grid container direction="row">
       {/* Estimate title & Animations */}
@@ -429,13 +449,29 @@ export default function Estimate() {
           style={{ width: "18em", marginTop: "1em" }}
         >
           <Grid item>
-            <IconButton onClick={previousQuestion}>
-              <img src={backArrow} alt="Previous question" />
+            <IconButton
+              disabled={navigationPreviousDisabled()}
+              onClick={previousQuestion}
+            >
+              <img
+                src={
+                  navigationPreviousDisabled() ? backArrowDisabled : backArrow
+                }
+                alt="Previous question"
+              />
             </IconButton>
           </Grid>
           <Grid item>
-            <IconButton onClick={nextQuestion}>
-              <img src={forwardArrow} alt="Next question" />
+            <IconButton
+              disabled={navigationNextDisabled()}
+              onClick={nextQuestion}
+            >
+              <img
+                src={
+                  navigationNextDisabled() ? forwardArrowDisabled : forwardArrow
+                }
+                alt="Next question"
+              />
             </IconButton>
           </Grid>
         </Grid>
